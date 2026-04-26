@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renata Amalia Larasati — Business Operations & Data Analyst</title>
+<meta name="description" content="Renata Amalia Larasati — Business Statistics graduate with experience in logistics operations, invoice validation, revenue assurance, and operational data analysis.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0f2340;--navy-mid:#1a3557;--gold:#c8974a;--gold-light:#e8c48a;
+    --cream:#faf7f2;--warm-gray:#f0ebe2;--text:#1c1c1c;--muted:#6b6b6b;--border:#ddd5c8;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.7;}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:60px;}
+  .nav-logo{font-family:'DM Serif Display',serif;color:var(--gold);font-size:18px;letter-spacing:.02em;}
+  .nav-links{display:flex;gap:1.75rem;list-style:none;}
+  .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:12px;letter-spacing:.06em;text-transform:uppercase;transition:color .2s;}
+  .nav-links a:hover{color:var(--gold-light);}
+
+  /* HERO */
+  .hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:100px 3rem 4rem;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(200,151,74,.08) 0%,transparent 70%);pointer-events:none;}
+  .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+  .hero-inner{max-width:900px;}
+  .hero-tag{display:inline-block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,151,74,.4);padding:5px 14px;border-radius:2px;margin-bottom:2rem;opacity:0;animation:fadeUp .6s .2s ease forwards;}
+  .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(40px,6vw,68px);color:#fff;line-height:1.1;margin-bottom:1.5rem;opacity:0;animation:fadeUp .6s .4s ease forwards;}
+  .hero h1 em{color:var(--gold);font-style:italic;}
+  .hero-sub{font-size:16px;color:rgba(255,255,255,.65);max-width:580px;line-height:1.8;margin-bottom:2.5rem;opacity:0;animation:fadeUp .6s .6s ease forwards;}
+  .hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;opacity:0;animation:fadeUp .6s .8s ease forwards;}
+  .stat-num{font-family:'DM Serif Display',serif;font-size:32px;color:var(--gold);display:block;line-height:1;}
+  .stat-label{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;}
+  .hero-cta{display:flex;gap:1rem;margin-top:3rem;flex-wrap:wrap;opacity:0;animation:fadeUp .6s 1s ease forwards;}
+  .btn-primary{background:var(--gold);color:var(--navy);padding:12px 28px;font-size:13px;font-weight:500;text-decoration:none;letter-spacing:.04em;border-radius:2px;transition:background .2s;}
+  .btn-primary:hover{background:var(--gold-light);}
+  .btn-outline{border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.8);padding:12px 28px;font-size:13px;text-decoration:none;letter-spacing:.04em;border-radius:2px;transition:border-color .2s,color .2s;}
+  .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+  /* SECTIONS */
+  section{padding:5rem 3rem;}
+  .section-inner{max-width:960px;margin:0 auto;}
+  .section-label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
+  .section-title{font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,40px);color:var(--navy);line-height:1.2;margin-bottom:2.5rem;}
+
+  /* ABOUT */
+  #about{background:var(--warm-gray);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+  .about-text p{color:var(--muted);margin-bottom:1rem;line-height:1.8;}
+  .about-text p strong{color:var(--text);font-weight:500;}
+  .skills-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem;}
+  .skill-tag{background:var(--navy);color:rgba(255,255,255,.85);font-size:12px;padding:5px 12px;border-radius:2px;letter-spacing:.03em;}
+  .about-credentials{display:flex;flex-direction:column;gap:1.25rem;}
+  .cred-card{background:#fff;border:1px solid var(--border);border-left:3px solid var(--gold);padding:1.1rem 1.4rem;border-radius:2px;}
+  .cred-title{font-weight:500;font-size:14px;color:var(--navy);margin-bottom:3px;}
+  .cred-sub{font-size:13px;color:var(--muted);}
+  .cred-badge{display:inline-block;margin-top:6px;background:rgba(200,151,74,.12);color:var(--gold);font-size:11px;padding:2px 10px;border-radius:2px;letter-spacing:.04em;}
+
+  /* CAREER FOCUS */
+  #target{background:var(--cream);}
+  .target-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;}
+  .target-card{background:#fff;border:1px solid var(--border);border-top:3px solid var(--gold);padding:1.5rem;border-radius:2px;}
+  .target-role{font-weight:500;font-size:14px;color:var(--navy);margin-bottom:6px;}
+  .target-why{font-size:13px;color:var(--muted);line-height:1.65;}
+
+  /* STRENGTHS */
+  #strengths{background:var(--navy);}
+  #strengths .section-label{color:rgba(200,151,74,.8);}
+  #strengths .section-title{color:#fff;}
+  .strengths-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;}
+  .strength-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:1.5rem;border-radius:4px;}
+  .strength-icon{display:block;margin-bottom:.75rem;}
+  .strength-title{font-weight:500;font-size:14px;color:var(--gold);margin-bottom:6px;}
+  .strength-desc{font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;}
+
+  /* PROJECTS */
+  #projects{background:var(--warm-gray);}
+  .projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+  .project-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:transform .2s,box-shadow .2s;}
+  .project-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(15,35,64,.1);}
+  .project-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;}
+  .project-card.featured .project-header{min-height:auto;}
+  .project-card.full-width{grid-column:1/-1;}
+  .project-header{background:var(--navy);padding:2rem;display:flex;flex-direction:column;justify-content:space-between;min-height:200px;}
+  .project-type{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:auto;}
+  .project-title{font-family:'DM Serif Display',serif;font-size:20px;color:#fff;line-height:1.3;margin-top:1rem;}
+  .demo-btn{display:inline-block;margin-top:1.25rem;background:var(--gold);color:var(--navy);font-size:12px;font-weight:500;padding:8px 18px;border-radius:2px;text-decoration:none;transition:background .2s;align-self:flex-start;}
+  .demo-btn:hover{background:var(--gold-light);}
+  .project-body{padding:2rem;}
+  .project-body p{color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:.75rem;}
+  .outcome-list{list-style:none;margin-top:.75rem;}
+  .outcome-list li{font-size:13px;color:var(--muted);padding:4px 0;padding-left:16px;position:relative;}
+  .outcome-list li::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:12px;}
+  .project-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.25rem;}
+  .meta-tag{background:var(--warm-gray);color:var(--navy);font-size:11px;padding:4px 10px;border-radius:2px;font-weight:500;letter-spacing:.03em;}
+  .disclaimer{background:rgba(200,151,74,.08);border-left:2px solid var(--gold);padding:8px 12px;margin-top:1rem;font-size:12px;color:var(--muted);font-style:italic;border-radius:0 2px 2px 0;}
+
+  /* DASHBOARD MOCKUP */
+  .dash-mockup{background:#f8f9fc;border:1px solid #e0e4ed;border-radius:6px;margin-top:1.5rem;overflow:hidden;}
+  .dash-topbar{background:#1e3a5f;padding:.6rem 1rem;display:flex;align-items:center;gap:.75rem;}
+  .dash-dot{width:10px;height:10px;border-radius:50%;}
+  .dash-title{color:rgba(255,255,255,.7);font-size:12px;letter-spacing:.04em;}
+  .dash-tabs{display:flex;gap:0;background:#fff;border-bottom:1px solid #e0e4ed;}
+  .dash-tab{padding:.5rem 1rem;font-size:11px;font-weight:500;color:#888;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;white-space:nowrap;}
+  .dash-tab.active{color:#1e3a5f;border-bottom-color:#c8974a;}
+  .dash-panel{display:none;padding:1.25rem;gap:1rem;}
+  .dash-panel.active{display:block;}
+  .dash-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-bottom:1.25rem;}
+  .kpi{background:#fff;border:1px solid #e8eaf0;border-radius:4px;padding:.85rem 1rem;}
+  .kpi-val{font-size:20px;font-weight:500;color:#1e3a5f;line-height:1;}
+  .kpi-label{font-size:10px;color:#888;margin-top:3px;text-transform:uppercase;letter-spacing:.06em;}
+  .kpi-trend{font-size:11px;margin-top:4px;}
+  .kpi-trend.up{color:#1a7a4a;}
+  .kpi-trend.down{color:#b83232;}
+  .kpi-trend.warn{color:#c07c1a;}
+  .dash-charts{display:grid;grid-template-columns:1.6fr 1fr;gap:1rem;}
+  .dash-chart-box{background:#fff;border:1px solid #e8eaf0;border-radius:4px;padding:1rem;}
+  .chart-title{font-size:11px;font-weight:500;color:#555;margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.06em;}
+  svg.bar-chart{width:100%;height:110px;}
+  svg.line-chart{width:100%;height:110px;}
+  svg.donut-chart{width:80px;height:80px;}
+  .bar{transition:opacity .2s;}
+  .bar:hover{opacity:.8;}
+  .donut-wrap{display:flex;align-items:center;gap:1rem;}
+  .donut-legend{display:flex;flex-direction:column;gap:5px;}
+  .legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:#666;}
+  .legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+  .dash-table-wrap{background:#fff;border:1px solid #e8eaf0;border-radius:4px;margin-top:1rem;overflow:hidden;}
+  .dash-tbl{width:100%;border-collapse:collapse;font-size:12px;}
+  .dash-tbl th{background:#f4f5f8;color:#555;font-weight:500;padding:7px 10px;text-align:left;font-size:11px;letter-spacing:.04em;}
+  .dash-tbl td{padding:6px 10px;border-bottom:1px solid #f0f0f0;color:#444;}
+  .dash-tbl tr:last-child td{border-bottom:none;}
+  .dash-tbl tr:hover td{background:#fafbff;}
+  .status{display:inline-block;font-size:10px;font-weight:500;padding:2px 7px;border-radius:2px;}
+  .status.good{background:#e6f7ee;color:#1a7a4a;}
+  .status.warn{background:#fff3e0;color:#c07c1a;}
+  .status.risk{background:#fdecea;color:#b83232;}
+
+  /* PUBLICATION */
+  .pub-card{background:var(--navy);border-radius:4px;padding:2.5rem;display:flex;gap:2rem;align-items:flex-start;margin-top:2rem;}
+  .pub-icon{width:56px;height:72px;flex-shrink:0;background:var(--gold);border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:22px;color:var(--navy);}
+  .pub-label{font-size:10px;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-bottom:6px;}
+  .pub-title{font-family:'DM Serif Display',serif;font-size:20px;color:#fff;margin-bottom:8px;line-height:1.3;}
+  .pub-details{font-size:13px;color:rgba(255,255,255,.55);line-height:1.8;}
+  .pub-details span{color:rgba(255,255,255,.85);}
+
+  /* EXPERIENCE */
+  #experience{background:var(--cream);}
+  .timeline{position:relative;padding-left:2rem;}
+  .timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:var(--border);}
+  .timeline-item{position:relative;margin-bottom:2.5rem;}
+  .timeline-dot{position:absolute;left:-2rem;top:6px;width:9px;height:9px;border-radius:50%;background:var(--gold);transform:translateX(-4px);}
+  .timeline-date{font-size:12px;color:var(--gold);letter-spacing:.05em;margin-bottom:4px;}
+  .timeline-role{font-weight:500;font-size:15px;color:var(--navy);}
+  .timeline-company{font-size:13px;color:var(--muted);margin-bottom:8px;}
+  .timeline-desc{font-size:13px;color:var(--muted);line-height:1.7;}
+  .timeline-metric{display:inline-block;margin-top:8px;background:rgba(200,151,74,.12);color:var(--gold);font-size:12px;padding:3px 10px;border-radius:2px;font-weight:500;}
+
+  /* CERTIFICATIONS */
+  #certifications{background:var(--warm-gray);}
+  .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
+  .cert-card{background:#fff;border:1px solid var(--border);padding:1.1rem 1.4rem;border-radius:2px;}
+  .cert-name{font-weight:500;font-size:13px;color:var(--navy);margin-bottom:3px;}
+  .cert-issuer{font-size:12px;color:var(--muted);}
+
+  /* CONTACT */
+  #contact{background:var(--navy);}
+  #contact .section-title{color:#fff;}
+  #contact .section-label{color:var(--gold);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
+  .contact-text{color:rgba(255,255,255,.65);line-height:1.8;}
+  .contact-text strong{color:rgba(255,255,255,.9);}
+  .contact-actions{display:flex;flex-direction:column;gap:1rem;}
+  .contact-link{display:flex;align-items:center;gap:1rem;color:rgba(255,255,255,.75);text-decoration:none;font-size:14px;padding:1rem 1.25rem;border:1px solid rgba(255,255,255,.1);border-radius:2px;transition:border-color .2s,color .2s;}
+  .contact-link:hover{border-color:var(--gold);color:var(--gold);}
+  .contact-link.cta-primary{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:500;}
+  .contact-link.cta-primary:hover{background:var(--gold-light);border-color:var(--gold-light);color:var(--navy);}
+  .contact-link-icon{font-size:15px;width:20px;text-align:center;}
+
+  /* FOOTER */
+  footer{background:#0a1a2e;text-align:center;padding:1.5rem;font-size:12px;color:rgba(255,255,255,.3);}
+  footer a{color:rgba(255,255,255,.4);text-decoration:none;}
+
+  /* RESPONSIVE */
+  @media(max-width:768px){
+    nav{padding:0 1.5rem;} .nav-links{display:none;}
+    section{padding:3.5rem 1.5rem;} .hero{padding:100px 1.5rem 3rem;}
+    .about-grid,.projects-grid,.contact-grid{grid-template-columns:1fr;gap:2rem;}
+    .project-card.featured,.project-card.full-width{grid-column:auto;display:block;}
+    .pub-card{flex-direction:column;} .hero-stats{gap:1.5rem;}
+    .dash-kpi-row{grid-template-columns:1fr 1fr;} .dash-charts{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Renata A. Larasati</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#target">Focus</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <span class="hero-tag">Business Statistics Graduate · Logistics Operations · Revenue Assurance · Data Analysis</span>
+    <h1>Turning operational data<br>into <em>better business decisions</em></h1>
+    <p class="hero-sub">I connect data, finance, and logistics operations to support revenue assurance, distribution efficiency, and business performance, through structured analysis, process improvement, and cross-functional coordination.</p>
+    <div class="hero-stats">
+      <div class="stat-item"><span class="stat-num">20K+</span><span class="stat-label">Shipment records validated</span></div>
+      <div class="stat-item"><span class="stat-num">35%</span><span class="stat-label">Reporting delay cut</span></div>
+      <div class="stat-item"><span class="stat-num">99%+</span><span class="stat-label">Data accuracy</span></div>
+      <div class="stat-item"><span class="stat-num">300+</span><span class="stat-label">Containers processed</span></div>
+    </div>
+    <div class="hero-cta">
+      <a href="./Renata_CV.pdf" download class="btn-primary">↓ Download CV</a>
+      <a href="#projects" class="btn-outline">View my work</a>
+      <a href="mailto:renataamalia55@gmail.com" class="btn-outline">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">About me</div>
+    <h2 class="section-title">Operations-minded. Data-driven. Business-focused.</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a Business Statistics graduate from <strong>Institut Teknologi Sepuluh Nopember (ITS)</strong>, with international experience as an <strong>IISMA Scholar at the University of Galway, Ireland</strong>.</p>
+        <p>At PT Meratus Line, a leading Indonesian shipping and logistics company, I support invoice validation and reconciliation workflows across high-volume logistics operations, help identify billing discrepancies to protect revenue accuracy, and coordinate across logistics, finance, AR, and commercial teams to improve reporting reliability and operational efficiency.</p>
+        <p>I use tools including Excel, Google Sheets, Python, R, Power BI, and Tableau to structure and analyse operational data, making numbers meaningful for decision-makers.</p>
+        <p>I'm interested in Management Trainee or Management Development Programme opportunities where I can keep learning, take on broader responsibilities, and contribute more directly to business problem-solving. I'm also strengthening my understanding of inventory control, distribution performance metrics, and dashboard storytelling.</p>
+        <div class="skills-list">
+          <span class="skill-tag">Logistics Operations</span>
+          <span class="skill-tag">Revenue Assurance</span>
+          <span class="skill-tag">Invoice Validation</span>
+          <span class="skill-tag">Distribution Data</span>
+          <span class="skill-tag">Cross-functional Coordination</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">R & R Shiny</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Excel VBA</span>
+          <span class="skill-tag">Statistical Modelling</span>
+        </div>
+      </div>
+      <div class="about-credentials">
+        <div class="cred-card">
+          <div class="cred-title">Bachelor of Applied Business Statistics</div>
+          <div class="cred-sub">Institut Teknologi Sepuluh Nopember · 2020–2024</div>
+          <span class="cred-badge">GPA 3.29 / 4.00</span>
+        </div>
+        <div class="cred-card">
+          <div class="cred-title">IISMA Scholar — University of Galway</div>
+          <div class="cred-sub">Shannon College of Hotel Management, Ireland · 2023</div>
+          <span class="cred-badge">International Scholarship</span>
+        </div>
+        <div class="cred-card">
+          <div class="cred-title">TOEIC 860 · Duolingo EPT 110</div>
+          <div class="cred-sub">Professional English proficiency · Certified</div>
+          <span class="cred-badge">Fluent / Professional</span>
+        </div>
+        <div class="cred-card">
+          <div class="cred-title">ISO 9001:2015 · Quality Management</div>
+          <div class="cred-sub">Fundamentals of QMS & 5R Certified</div>
+          <span class="cred-badge">Certified</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER FOCUS -->
+<section id="target">
+  <div class="section-inner">
+    <div class="section-label">Career focus</div>
+    <h2 class="section-title">Areas where I aim to contribute and grow</h2>
+    <div class="target-grid">
+      <div class="target-card">
+        <div class="target-role">Management Trainee / MDP</div>
+        <div class="target-why">Combines structured leadership development, analytical thinking, and responsibility for solving real business problems, building future operations contributors from the ground up.</div>
+      </div>
+      <div class="target-card">
+        <div class="target-role">Logistics Distribution / Branch Operations</div>
+        <div class="target-why">Matches my experience with shipment documentation, invoice validation, operational accuracy, and coordination across logistics and commercial teams.</div>
+      </div>
+      <div class="target-card">
+        <div class="target-role">Business Operations / Revenue Assurance</div>
+        <div class="target-why">Directly aligned with my reconciliation workflow experience, billing accuracy support, and operational reporting at PT Meratus Line.</div>
+      </div>
+      <div class="target-card">
+        <div class="target-role">Data-Driven Operations Analyst</div>
+        <div class="target-why">Matches my Business Statistics foundation and hands-on experience with Excel, SQL, Python, R, Power BI, and Tableau applied to real operational challenges.</div>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem;font-size:13px;color:var(--muted);">Willing to be placed across Indonesia for suitable Management Trainee or business operations opportunities.</p>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section id="strengths">
+  <div class="section-inner">
+    <div class="section-label">Core strengths</div>
+    <h2 class="section-title">What I bring to operations roles</h2>
+    <div class="strengths-grid">
+      <div class="strength-card">
+        <span class="strength-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </span>
+        <div class="strength-title">Logistics & Distribution Operations</div>
+        <div class="strength-desc">Hands-on experience with shipment documentation, cargo manifests, and invoice validation across Indonesia's domestic logistics network.</div>
+      </div>
+      <div class="strength-card">
+        <span class="strength-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </span>
+        <div class="strength-title">Revenue Assurance & Reporting Accuracy</div>
+        <div class="strength-desc">Supporting billing accuracy by identifying discrepancies, improving reporting reliability, and helping reduce potential revenue leakage.</div>
+      </div>
+      <div class="strength-card">
+        <span class="strength-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </span>
+        <div class="strength-title">Operational Data Analysis</div>
+        <div class="strength-desc">Turning raw logistics and financial data into structured reports and dashboards using Excel, Python, R, SQL, Power BI, and Tableau.</div>
+      </div>
+      <div class="strength-card">
+        <span class="strength-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </span>
+        <div class="strength-title">Cross-functional Collaboration</div>
+        <div class="strength-desc">Coordinating across logistics, finance, AR, e-tax, documentation, and sales teams to connect operational data to commercial outcomes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label">Selected work</div>
+    <h2 class="section-title">Projects & publications</h2>
+    <div class="projects-grid">
+
+      <!-- FEATURED — R SHINY -->
+      <div class="project-card featured">
+        <div class="project-header">
+          <div class="project-type">Final Year Project · Live R Shiny Application</div>
+          <div class="project-title">Portfolio Optimisation App for IDX ESG Leaders</div>
+          <a href="https://renata-011.shinyapps.io/aplikasi_PA/" target="_blank" class="demo-btn">↗ Open Live App</a>
+        </div>
+        <div class="project-body">
+          <p><strong>Problem:</strong> Investors in ESG-listed companies on the IDX face uncertainty when allocating portfolio weights. Different investors define "acceptable risk" differently, making a one-size-fits-all model inadequate.</p>
+          <p><strong>Approach:</strong> Built an interactive R Shiny web application combining Fuzzy Linear Programming (to handle investor risk preference uncertainty) and Global Minimum Variance (to find the lowest-risk portfolio allocation).</p>
+          <p><strong>Result:</strong> A deployed, publicly accessible application where users can select ESG stocks, adjust risk tolerance, and see optimised portfolio weights and efficient frontier visualisation in real time.</p>
+          <div class="project-meta">
+            <span class="meta-tag">R Shiny</span><span class="meta-tag">Fuzzy Linear Programming</span>
+            <span class="meta-tag">Portfolio Optimisation</span><span class="meta-tag">ESG Investing</span>
+            <span class="meta-tag">IDX</span><span class="meta-tag">Statistical Modelling</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BRANCH DASHBOARD — FULL WIDTH WITH EMBEDDED MOCKUP -->
+      <div class="project-card full-width">
+        <div class="project-header" style="min-height:auto;padding:2rem;">
+          <div class="project-type">Simulated Project · Branch Performance Analytics</div>
+          <div class="project-title">Branch Distribution Performance Dashboard</div>
+        </div>
+        <div class="project-body">
+          <p><strong>Problem:</strong> In branch operations, teams often need to monitor inventory health, sales movement, delivery performance, and cost efficiency across multiple areas. In practice, that data is often scattered and hard to read at a glance.</p>
+          <p><strong>Approach:</strong> Built a simulated branch distribution dashboard using dummy FMCG/distribution data, demonstrating how operational and commercial metrics can be structured to support branch-level decisions.</p>
+          <p><strong>Business relevance:</strong> This project is structured around the day-to-day responsibilities of an MT Branch Controller: monitoring stock efficiency, spotting commercial patterns, and using data to support operational decisions. All data shown is simulated.</p>
+
+          <!-- INTERACTIVE DASHBOARD MOCKUP -->
+          <div class="dash-mockup">
+            <div class="dash-topbar">
+              <div class="dash-dot" style="background:#ff5f57;"></div>
+              <div class="dash-dot" style="background:#febc2e;"></div>
+              <div class="dash-dot" style="background:#28c840;"></div>
+              <span class="dash-title">Branch Distribution Dashboard — Simulated Data</span>
+            </div>
+            <div class="dash-tabs" id="dashTabs">
+              <div class="dash-tab active" onclick="showTab('overview')">Overview</div>
+              <div class="dash-tab" onclick="showTab('inventory')">Inventory</div>
+              <div class="dash-tab" onclick="showTab('sales')">Sales by Area</div>
+              <div class="dash-tab" onclick="showTab('delivery')">Delivery & Cost</div>
+            </div>
+
+            <!-- OVERVIEW -->
+            <div class="dash-panel active" id="tab-overview">
+              <div class="dash-kpi-row">
+                <div class="kpi"><div class="kpi-val">91.4%</div><div class="kpi-label">Stock Availability</div><div class="kpi-trend up">↑ +2.1% vs last month</div></div>
+                <div class="kpi"><div class="kpi-val">3.2x</div><div class="kpi-label">Inventory Turnover</div><div class="kpi-trend warn">→ Target: 3.5x</div></div>
+                <div class="kpi"><div class="kpi-val">8.3%</div><div class="kpi-label">Delivery Delay Rate</div><div class="kpi-trend down">↑ +1.2% vs last month</div></div>
+                <div class="kpi"><div class="kpi-val">Rp 42K</div><div class="kpi-label">Avg Cost / Shipment</div><div class="kpi-trend up">↓ −Rp 3K vs last month</div></div>
+              </div>
+              <div class="dash-charts">
+                <div class="dash-chart-box">
+                  <div class="chart-title">Monthly Sales by Branch (Rp Million)</div>
+                  <svg class="bar-chart" viewBox="0 0 360 110">
+                    <g transform="translate(30,5)">
+                      <!-- bars: Jan–Jun -->
+                      <rect class="bar" x="0"  y="40" width="34" height="60" fill="#c8974a" rx="2"/><text x="17"  y="107" text-anchor="middle" font-size="9" fill="#888">Jan</text>
+                      <rect class="bar" x="44" y="28" width="34" height="72" fill="#c8974a" rx="2"/><text x="61"  y="107" text-anchor="middle" font-size="9" fill="#888">Feb</text>
+                      <rect class="bar" x="88" y="20" width="34" height="80" fill="#c8974a" rx="2"/><text x="105" y="107" text-anchor="middle" font-size="9" fill="#888">Mar</text>
+                      <rect class="bar" x="132" y="35" width="34" height="65" fill="#c8974a" rx="2"/><text x="149" y="107" text-anchor="middle" font-size="9" fill="#888">Apr</text>
+                      <rect class="bar" x="176" y="15" width="34" height="85" fill="#1e3a5f" rx="2"/><text x="193" y="107" text-anchor="middle" font-size="9" fill="#888">May</text>
+                      <rect class="bar" x="220" y="10" width="34" height="90" fill="#1e3a5f" rx="2"/><text x="237" y="107" text-anchor="middle" font-size="9" fill="#888">Jun</text>
+                      <!-- y-axis labels -->
+                      <text x="-5" y="102" text-anchor="end" font-size="9" fill="#bbb">0</text>
+                      <text x="-5" y="52" text-anchor="end" font-size="9" fill="#bbb">250</text>
+                      <text x="-5" y="12" text-anchor="end" font-size="9" fill="#bbb">450</text>
+                      <line x1="0" y1="100" x2="260" y2="100" stroke="#eee" stroke-width="1"/>
+                      <line x1="0" y1="50" x2="260" y2="50" stroke="#eee" stroke-width=".5" stroke-dasharray="3"/>
+                    </g>
+                  </svg>
+                </div>
+                <div class="dash-chart-box">
+                  <div class="chart-title">Stock Status Distribution</div>
+                  <div class="donut-wrap">
+                    <svg class="donut-chart" viewBox="0 0 80 80">
+                      <!-- donut segments: healthy 62%, warning 25%, risk 13% -->
+                      <circle cx="40" cy="40" r="28" fill="none" stroke="#e8eaf0" stroke-width="14"/>
+                      <circle cx="40" cy="40" r="28" fill="none" stroke="#1a7a4a" stroke-width="14" stroke-dasharray="110 65" stroke-dashoffset="0" transform="rotate(-90 40 40)"/>
+                      <circle cx="40" cy="40" r="28" fill="none" stroke="#c8974a" stroke-width="14" stroke-dasharray="44 131" stroke-dashoffset="-110" transform="rotate(-90 40 40)"/>
+                      <circle cx="40" cy="40" r="28" fill="none" stroke="#b83232" stroke-width="14" stroke-dasharray="22 153" stroke-dashoffset="-154" transform="rotate(-90 40 40)"/>
+                      <text x="40" y="44" text-anchor="middle" font-size="11" font-weight="500" fill="#333">62%</text>
+                    </svg>
+                    <div class="donut-legend">
+                      <div class="legend-item"><div class="legend-dot" style="background:#1a7a4a;"></div>Healthy (62%)</div>
+                      <div class="legend-item"><div class="legend-dot" style="background:#c8974a;"></div>Warning (25%)</div>
+                      <div class="legend-item"><div class="legend-dot" style="background:#b83232;"></div>At risk (13%)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- INVENTORY -->
+            <div class="dash-panel" id="tab-inventory">
+              <div class="dash-kpi-row">
+                <div class="kpi"><div class="kpi-val">247</div><div class="kpi-label">Total SKUs</div><div class="kpi-trend up">Active stock</div></div>
+                <div class="kpi"><div class="kpi-val">32</div><div class="kpi-label">Stockout Risk SKUs</div><div class="kpi-trend warn">Needs reorder</div></div>
+                <div class="kpi"><div class="kpi-val">18</div><div class="kpi-label">Slow-Moving SKUs</div><div class="kpi-trend down">Review needed</div></div>
+                <div class="kpi"><div class="kpi-val">91.4%</div><div class="kpi-label">Fill Rate</div><div class="kpi-trend up">↑ vs 89.1% last month</div></div>
+              </div>
+              <div class="dash-table-wrap">
+                <table class="dash-tbl">
+                  <tr><th>SKU</th><th>Category</th><th>Stock (units)</th><th>Turnover</th><th>Status</th></tr>
+                  <tr><td>SKU-001</td><td>Skincare</td><td>1,240</td><td>4.1x</td><td><span class="status good">Healthy</span></td></tr>
+                  <tr><td>SKU-047</td><td>Haircare</td><td>320</td><td>3.8x</td><td><span class="status good">Healthy</span></td></tr>
+                  <tr><td>SKU-103</td><td>Skincare</td><td>88</td><td>2.1x</td><td><span class="status warn">Low stock</span></td></tr>
+                  <tr><td>SKU-215</td><td>Body Care</td><td>45</td><td>1.4x</td><td><span class="status risk">Reorder now</span></td></tr>
+                  <tr><td>SKU-289</td><td>Haircare</td><td>610</td><td>0.9x</td><td><span class="status warn">Slow moving</span></td></tr>
+                </table>
+              </div>
+            </div>
+
+            <!-- SALES -->
+            <div class="dash-panel" id="tab-sales">
+              <div class="dash-kpi-row">
+                <div class="kpi"><div class="kpi-val">Rp 892M</div><div class="kpi-label">Total Sales (Jun)</div><div class="kpi-trend up">↑ +11% vs May</div></div>
+                <div class="kpi"><div class="kpi-val">Area B</div><div class="kpi-label">Top Performing Area</div><div class="kpi-trend up">Rp 312M</div></div>
+                <div class="kpi"><div class="kpi-val">Area D</div><div class="kpi-label">Underperforming</div><div class="kpi-trend down">−18% vs target</div></div>
+                <div class="kpi"><div class="kpi-val">14</div><div class="kpi-label">Active Store Points</div><div class="kpi-trend warn">2 below target</div></div>
+              </div>
+              <div class="dash-table-wrap">
+                <table class="dash-tbl">
+                  <tr><th>Area</th><th>Sales (Rp M)</th><th>vs Target</th><th>Growth MoM</th><th>Status</th></tr>
+                  <tr><td>Area A — Surabaya</td><td>245</td><td>+8%</td><td>+12%</td><td><span class="status good">On track</span></td></tr>
+                  <tr><td>Area B — Sidoarjo</td><td>312</td><td>+15%</td><td>+22%</td><td><span class="status good">Exceeding</span></td></tr>
+                  <tr><td>Area C — Malang</td><td>198</td><td>−2%</td><td>+5%</td><td><span class="status warn">Monitor</span></td></tr>
+                  <tr><td>Area D — Gresik</td><td>137</td><td>−18%</td><td>−4%</td><td><span class="status risk">Needs review</span></td></tr>
+                </table>
+              </div>
+            </div>
+
+            <!-- DELIVERY & COST -->
+            <div class="dash-panel" id="tab-delivery">
+              <div class="dash-kpi-row">
+                <div class="kpi"><div class="kpi-val">8.3%</div><div class="kpi-label">Delay Rate</div><div class="kpi-trend down">↑ Above 7% target</div></div>
+                <div class="kpi"><div class="kpi-val">1.4 days</div><div class="kpi-label">Avg Delay Duration</div><div class="kpi-trend warn">vs 1.0 day target</div></div>
+                <div class="kpi"><div class="kpi-val">Rp 42K</div><div class="kpi-label">Cost / Shipment</div><div class="kpi-trend up">↓ −Rp 3K vs last month</div></div>
+                <div class="kpi"><div class="kpi-val">94.1%</div><div class="kpi-label">On-Time Delivery</div><div class="kpi-trend warn">Target: 95%</div></div>
+              </div>
+              <div class="dash-table-wrap">
+                <table class="dash-tbl">
+                  <tr><th>Route</th><th>Shipments</th><th>On-Time %</th><th>Cost/Ship (Rp)</th><th>Status</th></tr>
+                  <tr><td>Surabaya → Sidoarjo</td><td>412</td><td>97%</td><td>28,000</td><td><span class="status good">Efficient</span></td></tr>
+                  <tr><td>Surabaya → Malang</td><td>287</td><td>93%</td><td>45,000</td><td><span class="status warn">Monitor</span></td></tr>
+                  <tr><td>Surabaya → Gresik</td><td>198</td><td>89%</td><td>52,000</td><td><span class="status risk">Review cost</span></td></tr>
+                  <tr><td>Surabaya → Lamongan</td><td>143</td><td>91%</td><td>61,000</td><td><span class="status warn">High cost</span></td></tr>
+                </table>
+              </div>
+            </div>
+          </div><!-- end dash-mockup -->
+
+          <div class="project-meta" style="margin-top:1.25rem;">
+            <span class="meta-tag">Excel / Power BI</span><span class="meta-tag">Inventory Analysis</span>
+            <span class="meta-tag">Sales Pattern Analysis</span><span class="meta-tag">Branch Performance</span>
+            <span class="meta-tag">Distribution Operations</span><span class="meta-tag">Cost Efficiency</span>
+          </div>
+          <div class="disclaimer">All data shown is simulated using dummy values for demonstration purposes. No real company data is used or disclosed.</div>
+        </div>
+      </div>
+
+      <!-- MERATUS — REFRAMED -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-type">Logistics Operations · Revenue Assurance</div>
+          <div class="project-title">Invoice Validation & Reconciliation Workflow</div>
+        </div>
+        <div class="project-body">
+          <p>Supported invoice validation and reconciliation workflows by comparing invoice records against cargo manifests across high-volume domestic shipping operations, with a focus on improving billing accuracy and distribution reporting reliability.</p>
+          <ul class="outcome-list">
+            <li>Validated invoice data against cargo manifests for 20,000+ cargo shipments</li>
+            <li>Identified billing discrepancies to support revenue assurance and reporting accuracy</li>
+            <li>Used Excel, Google Sheets, and structured validation logic to improve workflow consistency</li>
+            <li>Coordinated with finance, e-tax, documentation, and sales teams to resolve discrepancies</li>
+            <li>Contributed to a 35% reduction in operational reporting delays through process improvement</li>
+          </ul>
+          <div class="project-meta">
+            <span class="meta-tag">Excel VBA</span><span class="meta-tag">Google Sheets</span>
+            <span class="meta-tag">Revenue Assurance</span><span class="meta-tag">Logistics Operations</span>
+          </div>
+          <div class="disclaimer">Public version uses anonymised/simulated structure to demonstrate the workflow. No confidential company data is disclosed.</div>
+        </div>
+      </div>
+
+      <!-- QRIS -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-type">Research Project · Statistical Analysis</div>
+          <div class="project-title">Customer Satisfaction Analysis — QRIS Payment Method</div>
+        </div>
+        <div class="project-body">
+          <p>Conducted a structured 5-day survey of 98 customers, analysing satisfaction drivers for QRIS digital payment adoption using the biplot statistical method.</p>
+          <ul class="outcome-list">
+            <li>Designed and executed a structured survey instrument</li>
+            <li>Applied biplot method to uncover multi-dimensional satisfaction patterns</li>
+            <li>Delivered executive summaries with actionable stakeholder recommendations</li>
+          </ul>
+          <div class="project-meta">
+            <span class="meta-tag">R</span><span class="meta-tag">Biplot Analysis</span>
+            <span class="meta-tag">Survey Design</span><span class="meta-tag">Business Recommendations</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PUBLICATION -->
+    <div class="pub-card">
+      <div class="pub-icon">📖</div>
+      <div class="pub-content">
+        <div class="pub-label">Academic Publishing Support · ITS Press · Listed Contributor</div>
+        <div class="pub-title">Komputasi Analitika Menggunakan Excel dan R</div>
+        <div class="pub-details">
+          Publisher: <span>ITS Press, Institut Teknologi Sepuluh Nopember</span><br>
+          ISBN: <span>978-623-318-244-7</span> · Published 2024<br>
+          Topics: <span>Statistical computing, data analysis, Monte Carlo simulation, Bootstrap & Jacknife resampling, Excel & R programming</span><br><br>
+          Supported academic book preparation as part of ITS' "100 ISBN-Registered and Royalty-Earning Books Program." Assisted with source verification, content review, scheduling, and editorial coordination with ITS Press. Name listed in the book's contributor acknowledgements.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">Career</div>
+    <h2 class="section-title">Professional experience</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Apr 2025 – Present</div>
+        <div class="timeline-role">QA Documentation & Invoicing — Logistics Operations & Revenue Assurance</div>
+        <div class="timeline-company">PT Meratus Line & Group · Surabaya, Indonesia</div>
+        <div class="timeline-desc">Supporting invoice validation and reconciliation across 20,000+ cargo shipments. Identifying data inconsistencies to reduce reporting delays and support billing accuracy. Coordinating with finance, AR, e-tax, and documentation teams.</div>
+        <span class="timeline-metric">35% delay reduction · 20,000+ cargo shipments</span>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Dec 2024 – Apr 2025</div>
+        <div class="timeline-role">Data Operations — Melisa Digital Transformation Project</div>
+        <div class="timeline-company">PT Meratus Line & Group · Surabaya, Indonesia</div>
+        <div class="timeline-desc">First team member to process 50+ shipping documents covering 300+ containers. Maintained 99%+ data accuracy across logistics records. Collaborated with Digital Factory team on system integration and workflow improvement.</div>
+        <span class="timeline-metric">99%+ data accuracy · 300+ containers</span>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Aug 2024 – Mar 2025</div>
+        <div class="timeline-role">Research & Publishing Assistant</div>
+        <div class="timeline-company">Institut Teknologi Sepuluh Nopember · Surabaya</div>
+        <div class="timeline-desc">Supported ITS' "100 ISBN-Registered and Royalty-Earning Books Program" through content preparation, source verification, scheduling, and publisher coordination with ITS Press. Listed as contributor in published academic works.</div>
+        <span class="timeline-metric">Academic publishing support · ITS Press coordination</span>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Feb 2024 – May 2024</div>
+        <div class="timeline-role">Finance & Accounting Intern</div>
+        <div class="timeline-company">PT Bernofarm Pharmaceutical · Sidoarjo, Indonesia</div>
+        <div class="timeline-desc">Prepared and analysed financial statements. Reduced data entry errors by 20% and improved record-keeping efficiency by 40%. Participated in internal audits; commended by the Finance Manager.</div>
+        <span class="timeline-metric">20% fewer errors · 40% efficiency gain</span>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Sep – Dec 2023</div>
+        <div class="timeline-role">IISMA Scholar — Business Studies</div>
+        <div class="timeline-company">Shannon College of Hotel Management, University of Galway · Ireland</div>
+        <div class="timeline-desc">Competitive national scholarship for international study. Coursework in Business Analytics, Management Accounting, Inventory Valuation, Budgeting, and Leadership Development. Gained cross-cultural work experience in an international environment.</div>
+        <span class="timeline-metric">IISMA Awardee 2023</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-inner">
+    <div class="section-label">Credentials</div>
+    <h2 class="section-title">Education & certifications</h2>
+    <div class="cert-grid">
+      <div class="cert-card"><div class="cert-name">Data Science & Data Analysis</div><div class="cert-issuer">MySkill.id · 2024</div></div>
+      <div class="cert-card"><div class="cert-name">ISO 9001:2015 · Quality Management System (5R)</div><div class="cert-issuer">Certified · 2024</div></div>
+      <div class="cert-card"><div class="cert-name">Management Training</div><div class="cert-issuer">Institut Teknologi Sepuluh Nopember · 2023</div></div>
+      <div class="cert-card"><div class="cert-name">TOEIC 860 · Duolingo EPT 110</div><div class="cert-issuer">Professional English · Certified</div></div>
+      <div class="cert-card"><div class="cert-name">IISMA Awardee 2023</div><div class="cert-issuer">University of Galway, Ireland · National scholarship</div></div>
+      <div class="cert-card"><div class="cert-name">Best Team · SDGs Social Campaign</div><div class="cert-issuer">ITS · 2023</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Let's connect</div>
+    <h2 class="section-title">Open to opportunities</h2>
+    <div class="contact-grid">
+      <div class="contact-text">
+        <p>I'm interested in Management Trainee, logistics distribution, business analyst, and business development opportunities where I can apply my analytical background, attention to detail, and cross-functional experience.</p>
+        <br>
+        <p>Willing to be placed across Indonesia. Comfortable working in English (TOEIC 860).</p>
+        <br>
+        <p>Feel free to reach out for professional opportunities or collaboration.</p>
+      </div>
+      <div class="contact-actions">
+        <a href="./Renata_CV.pdf" download class="contact-link cta-primary">
+          <span class="contact-link-icon">↓</span>
+          Download CV (PDF)
+        </a>
+        <a href="mailto:renataamalia55@gmail.com" class="contact-link">
+          <span class="contact-link-icon">✉</span>
+          renataamalia55@gmail.com
+        </a>
+        <a href="tel:+6289643832385" class="contact-link">
+          <span class="contact-link-icon">✆</span>
+          +62 896 4383 2385
+        </a>
+        <a href="https://linkedin.com/in/renataamalialarasati" target="_blank" class="contact-link">
+          <span class="contact-link-icon">in</span>
+          linkedin.com/in/renataamalialarasati
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Renata Amalia Larasati · <a href="mailto:renataamalia55@gmail.com">renataamalia55@gmail.com</a>
+</footer>
+
+<script>
+function showTab(name) {
+  document.querySelectorAll('.dash-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.dash-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
